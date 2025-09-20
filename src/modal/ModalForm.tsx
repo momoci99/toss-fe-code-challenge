@@ -12,10 +12,10 @@ import {
   Select,
   TextField,
   Typography,
-} from '@mui/material';
+} from "@mui/material";
 
-import { useId, useRef, type FormEvent, type RefObject } from 'react';
-import type { FormErrors, FormValues } from './types';
+import { useId, useRef, type FormEvent, type RefObject } from "react";
+import type { FormErrors, FormValues } from "./types";
 
 type Props = {
   open: boolean;
@@ -27,7 +27,7 @@ type Props = {
   onCancel: () => void;
   onCloseByReason: (
     _e: unknown,
-    reason?: 'backdropClick' | 'escapeKeyDown',
+    reason?: "backdropClick" | "escapeKeyDown"
   ) => void;
 };
 
@@ -62,10 +62,10 @@ export default function ModalForm({
       keepMounted={false}
       scroll="paper"
       sx={{
-        '& .MuiDialog-paper': {
-          maxHeight: '90vh',
-          margin: '16px',
-          overflow: 'hidden',
+        "& .MuiDialog-paper": {
+          maxHeight: "90vh",
+          margin: "16px",
+          overflow: "hidden",
         },
       }}
     >
@@ -73,7 +73,7 @@ export default function ModalForm({
         id={titleId}
         tabIndex={-1}
         ref={titleRef}
-        sx={{ outline: 'none' }}
+        sx={{ outline: "none" }}
         variant="h4"
       >
         신청 폼
@@ -83,7 +83,7 @@ export default function ModalForm({
         <Typography
           id={descId}
           variant="body2"
-          sx={{ mb: 2, color: 'text.secondary' }}
+          sx={{ mb: 2, color: "text.secondary" }}
         >
           이메일과 FE경력 연차 등 간단한 정보를 입력해주세요.
         </Typography>
@@ -94,23 +94,23 @@ export default function ModalForm({
           role="alert"
           aria-live="assertive"
           sx={{
-            position: 'absolute',
+            position: "absolute",
             width: 1,
             height: 1,
             p: 0,
             m: -1,
             border: 0,
-            clip: 'rect(0 0 0 0)',
-            overflow: 'hidden',
+            clip: "rect(0 0 0 0)",
+            overflow: "hidden",
           }}
         >
-          {Object.values(errors).join(' ')}
+          {Object.values(errors).join(" ")}
         </Box>
 
         <Box
           component="form"
           onSubmit={onSubmit}
-          sx={{ display: 'grid', gap: 2, pt: 1 }}
+          sx={{ display: "grid", gap: 2, pt: 1 }}
         >
           <TextField
             label="이름 / 닉네임"
@@ -121,8 +121,8 @@ export default function ModalForm({
             helperText={errors.name}
             slotProps={{
               formHelperText: {
-                id: 'error-name',
-                'aria-live': 'assertive',
+                id: "error-name",
+                "aria-live": "assertive",
               },
             }}
             required
@@ -139,8 +139,8 @@ export default function ModalForm({
             helperText={errors.email}
             slotProps={{
               formHelperText: {
-                id: 'error-email',
-                'aria-live': 'assertive',
+                id: "error-email",
+                "aria-live": "assertive",
               },
             }}
             required
@@ -176,11 +176,11 @@ export default function ModalForm({
             value={values.github}
             onChange={(e) => onChange({ github: e.target.value })}
             error={!!errors.github}
-            helperText={errors.github || 'GitHub 프로필 URL을 입력해주세요.'}
+            helperText={errors.github || "GitHub 프로필 URL을 입력해주세요."}
             slotProps={{
               formHelperText: {
-                id: 'error-github',
-                'aria-live': 'assertive',
+                id: "error-github",
+                "aria-live": "assertive",
               },
             }}
             fullWidth
@@ -188,9 +188,9 @@ export default function ModalForm({
 
           <Box
             sx={{
-              display: 'flex',
+              display: "flex",
               gap: 1.5,
-              justifyContent: 'flex-end',
+              justifyContent: "flex-end",
               mt: 1,
             }}
           >
@@ -203,7 +203,6 @@ export default function ModalForm({
           </Box>
         </Box>
       </DialogContent>
-      {/* <DialogActions sx={{ display: { xs: "none" } }} /> */}
     </Dialog>
   );
 }
