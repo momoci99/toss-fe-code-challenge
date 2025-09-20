@@ -60,6 +60,14 @@ export default function ModalForm({
       disableEnforceFocus={false}
       disableRestoreFocus={false}
       keepMounted={false}
+      scroll="paper"
+      sx={{
+        '& .MuiDialog-paper': {
+          maxHeight: '90vh',
+          margin: '16px',
+          overflow: 'hidden',
+        },
+      }}
     >
       <DialogTitle
         id={titleId}
@@ -195,7 +203,7 @@ export default function ModalForm({
           </Box>
         </Box>
       </DialogContent>
-      <DialogActions sx={{ display: { xs: 'none' } }} />
+      {/* <DialogActions sx={{ display: { xs: "none" } }} /> */}
     </Dialog>
   );
 }
